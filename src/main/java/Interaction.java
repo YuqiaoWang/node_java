@@ -1,8 +1,10 @@
 /**
  * Created by yuqia_000 on 2016/9/11.
  */
+import com.ericsson.otp.erlang.*;
+
 public class Interaction {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         if (args.length != 3) {
             System.out.println("wrong number of arguments");
             System.out.println("expected: nodeName mailboxName cookie");
@@ -36,7 +38,7 @@ public class Interaction {
 
                 String OstMsg;
                 OtpErlangString repmsg;
-
+                repmsg = new OtpErlangString("OK!");
 
                 OtpErlangTuple outMsg =
                         new OtpErlangTuple(new OtpErlangObject[]{mbox.self(),repmsg});
